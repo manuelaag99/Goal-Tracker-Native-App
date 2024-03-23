@@ -1,20 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import AddNoteSection from './components/AddNoteSection';
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import AddGoalSection from './components/AddGoalSection';
+import { useState } from 'react';
+import ListOfGoals from './components/ListOfGoals';
 
 export default function App() {
 	return (
 		<View style={styles.container}>
 			<StatusBar style="auto" />
-			<AddNoteSection />
-			<View style={{ flex: 4, width: "100%", justifyContent: "center", alignItems: "center" }}>
-				<Text style={{ textAlign: "center", margin: 10 }}>
-					Mis metas
-				</Text>
-				<ScrollView>
-
-				</ScrollView>
-			</View>
+			<AddGoalSection />
+			<ListOfGoals />
 		</View>
 	);
 }
