@@ -3,13 +3,17 @@ import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-n
 import AddGoalSection from './components/AddGoalSection';
 import { useState } from 'react';
 import ListOfGoals from './components/ListOfGoals';
+import AddGoalModal from './components/Modals/AddGoalModal';
 
 export default function App() {
+	const [isModalVisible, setIsModalVisible] = useState(false);
+	
 	return (
 		<View style={styles.container}>
 			<StatusBar style="auto" />
-			<AddGoalSection />
+			<AddGoalSection buttonPress={() => setIsModalVisible(true)} />
 			<ListOfGoals />
+			{isModalVisible && <AddGoalModal closeModal={() => setIsModalVisible(false)} />}
 		</View>
 	);
 }
