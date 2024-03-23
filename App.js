@@ -7,13 +7,18 @@ import AddGoalModal from './components/Modals/AddGoalModal';
 
 export default function App() {
 	const [isModalVisible, setIsModalVisible] = useState(false);
+	const [listOfGoals, setListOfGoals] = useState([]);
+	function addNewGoalToListOfGoals (newGoal) {
+		setListOfGoals(currentGoals => [...currentGoals, newGoal])
+	}
 	
+	console.log(listOfGoals)
 	return (
 		<View style={styles.container}>
 			<StatusBar style="auto" />
 			<AddGoalSection buttonPress={() => setIsModalVisible(true)} />
 			<ListOfGoals />
-			{isModalVisible && <AddGoalModal closeModal={() => setIsModalVisible(false)} />}
+			{isModalVisible && <AddGoalModal closeModal={() => setIsModalVisible(false)} enterNewGoal={addNewGoalToListOfGoals} />}
 		</View>
 	);
 }
