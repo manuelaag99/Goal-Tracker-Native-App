@@ -17,7 +17,7 @@ export default function App() {
 		<View style={styles.container}>
 			<StatusBar style="auto" />
 			<AddGoalSection buttonPress={() => setIsModalVisible(true)} />
-			<ListOfGoals />
+			<ListOfGoals list={listOfGoals} />
 			{isModalVisible && <AddGoalModal closeModal={() => setIsModalVisible(false)} enterNewGoal={addNewGoalToListOfGoals} />}
 		</View>
 	);
