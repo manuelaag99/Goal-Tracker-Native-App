@@ -16,12 +16,13 @@ export default function ListOfGoals ({ list, sendIdOfItemToDelete }) {
 					data={list} 
 					renderItem={({item}) => <View style={{ width: "100%", padding: 10, backgroundColor: "#f82", borderRadius: 8, marginTop: 10 }}>
                         <Pressable onPressIn={() => deleteItem (item.id)}>
-                            <Text style={{ color: "#fff", width: "100%", textAlign: "center" }}>
+                            <Text style={{ color: "#fff", width: "100%", textAlign: "center", fontWeight: "bold" }}>
                                 {item.text}
                             </Text>
                         </Pressable>
 					</View>} 
 					keyExtractor={item => item.id} 
+                    key={item => item.id} 
                     style={{ width: "100%" }}
 				/>}
 			</View>

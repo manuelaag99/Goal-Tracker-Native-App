@@ -19,6 +19,7 @@ export default function App() {
 		})
 		setListOfGoals(newList)
 	}
+	console.log(listOfGoals)
 	
 	return (
 		<View style={styles.container}>
@@ -36,5 +37,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+		paddingTop: 25
 	},
 });
