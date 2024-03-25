@@ -4,7 +4,7 @@ import { Modal, Pressable, Text, TextInput, View } from "react-native";
 export default function AddGoalModal ({ closeModal, enterNewGoal }) {
     const [newGoal, setNewGoal] = useState({ text: "", id: "" });
     function inputChangeHandle (enteredValue) {
-        setNewGoal({ text: enteredValue })
+        setNewGoal({ text: enteredValue, id: Math.random() * 10000 })
     }
 
     function addGoal () {

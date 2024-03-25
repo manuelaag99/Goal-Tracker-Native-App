@@ -11,13 +11,20 @@ export default function App() {
 	function addNewGoalToListOfGoals (newGoal) {
 		setListOfGoals(currentGoals => [...currentGoals, newGoal])
 	}
+
+	let newList;
+	function deleteItemFromList (id) {
+		newList = listOfGoals.filter((goal) => {
+			return goal.id !== id;
+		})
+		setListOfGoals(newList)
+	}
 	
-	console.log(listOfGoals)
 	return (
 		<View style={styles.container}>
 			<StatusBar style="auto" />
 			<AddGoalSection buttonPress={() => setIsModalVisible(true)} />
-			<ListOfGoals list={listOfGoals} />
+			<ListOfGoals list={listOfGoals} sendIdOfItemToDelete={deleteItemFromList} />
 			{isModalVisible && <AddGoalModal closeModal={() => setIsModalVisible(false)} enterNewGoal={addNewGoalToListOfGoals} />}
 		</View>
 	);

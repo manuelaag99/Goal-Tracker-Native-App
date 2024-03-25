@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
 
-export default function ListOfGoals ({ list }) {
+export default function ListOfGoals ({ list, sendIdOfItemToDelete }) {
     function deleteItem (id) {
-        console.log(id)
+        sendIdOfItemToDelete(id);
     }
     return (
         <View style={{ flex: 4, width: "100%", justifyContent: "start", alignItems: "center", padding: 10 }}>
