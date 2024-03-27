@@ -25,13 +25,13 @@ export default function AddGoalModal ({ closeModal, enterNewGoal }) {
                     </View>
 
                     <View style={{ marginVertical: 10, width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", paddingHorizontal: 20 }}>
-                        <Pressable style={{ width: "40%", backgroundColor: "#f82", borderRadius: 8 }} onPressIn={closeModal}>
-                            <Text style={{ textAlign: "center", color: "#fff", fontWeight: "bold", padding: 10}}>
+                        <Pressable android_ripple={{ color: "#fa4" }} style={{ width: "40%", padding: 10, backgroundColor: "#f82", borderRadius: 8 }} onPress={closeModal}>
+                            <Text style={{ textAlign: "center", color: "#fff", fontWeight: "bold" }}>
                                 Cancelar
                             </Text>
                         </Pressable>
-                        <Pressable style={[{ width: "40%", borderRadius: 8 }, (isButtonPressed ? { backgroundColor: "#333" } : { backgroundColor: "#f82" } ) ]} onPressIn={addGoal} onPressOut={() => setIsButtonPressed(false)}>
-                            <Text style={{ textAlign: "center", color: "#fff", fontWeight: "bold", padding: 10}}>
+                        <Pressable android_ripple={{ color: "#fa4" }} style={{ width: "40%", padding: 10, backgroundColor: "#f82", borderRadius: 8 }} onPress={addGoal}>
+                            <Text style={{ textAlign: "center", color: "#fff", fontWeight: "bold" }}>
                                 Agregar
                             </Text>
                         </Pressable>

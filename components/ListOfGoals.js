@@ -14,8 +14,8 @@ export default function ListOfGoals ({ list, sendIdOfItemToDelete }) {
 				</Text>}
 				{list && (list.length > 0) && <FlatList 
 					data={list} 
-					renderItem={({item}) => <View style={{ width: "100%", padding: 10, backgroundColor: "#f82", borderRadius: 8, marginTop: 10 }}>
-                        <Pressable onPressIn={() => deleteItem (item.id)}>
+					renderItem={({item}) => <View style={{ width: "100%", backgroundColor: "#f82", marginTop: 10 }}>
+                        <Pressable android_ripple={{ color: "#fa4" }} onPress={() => deleteItem (item.id)} style={{ padding: 10, borderRadius: 8 }}>
                             <Text style={{ color: "#fff", width: "100%", textAlign: "center", fontWeight: "bold" }}>
                                 {item.text}
                             </Text>
